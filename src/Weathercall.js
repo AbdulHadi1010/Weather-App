@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
+import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import axios from "axios";
 
 export default function Weathercall() {
@@ -46,6 +46,7 @@ export default function Weathercall() {
   // useEffect(() => {
   //   callApi();
   // }, []);
+ 
   return (
     <View>
       {/* {loading ? (
@@ -59,7 +60,9 @@ export default function Weathercall() {
           <Text style={{ marginTop: 10, fontSize: 15, textAlign: "center" }}>Feels Like: {tempchangertoC(apiData?.main.feels_like)}° C</Text>
           <Text style={{ marginTop: 10, fontSize: 15, textAlign: "center" }}>Max temparature: {tempchangertoC(apiData?.main.temp_max)}° C</Text>
           <Text style={{ marginTop: 10, fontSize: 15, textAlign: "center" }}>Min temparature: {tempchangertoC(apiData?.main.temp_min)}° C</Text>
+
         </>
+        
       {/* )} */}
     </View>
   );
