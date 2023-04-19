@@ -28,7 +28,7 @@ export default function Weathercall() {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: `https://api.openweathermap.org/data/2.5/weather?lat=${loc?.latitude}&lon=${loc?.latitude}&appid=134bcc17ff7fbd17a3ec89f642825260`,
+    url: `https://api.openweathermap.org/data/2.5/weather?lat=${loc?.latitude}&lon=${loc?.longitude}&appid=134bcc17ff7fbd17a3ec89f642825260`,
     headers: {},
   };
   axios
