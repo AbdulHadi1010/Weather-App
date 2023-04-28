@@ -14,6 +14,15 @@
 		96905EF65AED1B983A6B3ABC /* libPods-WeatherApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-WeatherApp.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		3AC17C09A62042389551D89A /* SFPRODISPLAYBLACKITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 10449F86CE5F4963B0A12A88 /* SFPRODISPLAYBLACKITALIC.OTF */; };
+		F80A408AE0464F13A756F127 /* SFPRODISPLAYBOLD.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 295F2BFC17CA4301A79180BB /* SFPRODISPLAYBOLD.OTF */; };
+		4BE6E555336543F694C71ABE /* SFPRODISPLAYHEAVYITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F174C38F44BC69FD115B4 /* SFPRODISPLAYHEAVYITALIC.OTF */; };
+		3DD69B5C59B74104907955E5 /* SFPRODISPLAYLIGHTITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = F3C86C77A8FD47B3988C4AFD /* SFPRODISPLAYLIGHTITALIC.OTF */; };
+		47E943FEF2FB4D11A5F4B51D /* SFPRODISPLAYMEDIUM.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 2BA98035F7154A1691E6D510 /* SFPRODISPLAYMEDIUM.OTF */; };
+		6CD14BF55B0C408E9BCEACB1 /* SFPRODISPLAYREGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 1A14BB68B34B43A4838AC8AC /* SFPRODISPLAYREGULAR.OTF */; };
+		E113A010DABD453D9BAA71E6 /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = B2EE114174454A249546C5F7 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */; };
+		D1429E78172E40788ABD12AE /* SFPRODISPLAYTHINITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = B922B75134D04011A776E44D /* SFPRODISPLAYTHINITALIC.OTF */; };
+		2234470D24DA431C8F1B2476 /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = D6C17F0FED4445A1827263A2 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +40,15 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-WeatherApp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		10449F86CE5F4963B0A12A88 /* SFPRODISPLAYBLACKITALIC.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYBLACKITALIC.OTF"; path = "../assets/fonts/SFPRODISPLAYBLACKITALIC.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		295F2BFC17CA4301A79180BB /* SFPRODISPLAYBOLD.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYBOLD.OTF"; path = "../assets/fonts/SFPRODISPLAYBOLD.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5F2F174C38F44BC69FD115B4 /* SFPRODISPLAYHEAVYITALIC.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYHEAVYITALIC.OTF"; path = "../assets/fonts/SFPRODISPLAYHEAVYITALIC.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3C86C77A8FD47B3988C4AFD /* SFPRODISPLAYLIGHTITALIC.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYLIGHTITALIC.OTF"; path = "../assets/fonts/SFPRODISPLAYLIGHTITALIC.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2BA98035F7154A1691E6D510 /* SFPRODISPLAYMEDIUM.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYMEDIUM.OTF"; path = "../assets/fonts/SFPRODISPLAYMEDIUM.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1A14BB68B34B43A4838AC8AC /* SFPRODISPLAYREGULAR.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYREGULAR.OTF"; path = "../assets/fonts/SFPRODISPLAYREGULAR.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B2EE114174454A249546C5F7 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYSEMIBOLDITALIC.OTF"; path = "../assets/fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B922B75134D04011A776E44D /* SFPRODISPLAYTHINITALIC.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYTHINITALIC.OTF"; path = "../assets/fonts/SFPRODISPLAYTHINITALIC.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D6C17F0FED4445A1827263A2 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYULTRALIGHTITALIC.OTF"; path = "../assets/fonts/SFPRODISPLAYULTRALIGHTITALIC.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +103,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
+				B1D53ED40A474DD9820AFFE3 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -132,6 +151,23 @@
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
+		};
+		B1D53ED40A474DD9820AFFE3 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				10449F86CE5F4963B0A12A88 /* SFPRODISPLAYBLACKITALIC.OTF */,
+				295F2BFC17CA4301A79180BB /* SFPRODISPLAYBOLD.OTF */,
+				5F2F174C38F44BC69FD115B4 /* SFPRODISPLAYHEAVYITALIC.OTF */,
+				F3C86C77A8FD47B3988C4AFD /* SFPRODISPLAYLIGHTITALIC.OTF */,
+				2BA98035F7154A1691E6D510 /* SFPRODISPLAYMEDIUM.OTF */,
+				1A14BB68B34B43A4838AC8AC /* SFPRODISPLAYREGULAR.OTF */,
+				B2EE114174454A249546C5F7 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */,
+				B922B75134D04011A776E44D /* SFPRODISPLAYTHINITALIC.OTF */,
+				D6C17F0FED4445A1827263A2 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -196,6 +232,15 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
+				3AC17C09A62042389551D89A /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
+				F80A408AE0464F13A756F127 /* SFPRODISPLAYBOLD.OTF in Resources */,
+				4BE6E555336543F694C71ABE /* SFPRODISPLAYHEAVYITALIC.OTF in Resources */,
+				3DD69B5C59B74104907955E5 /* SFPRODISPLAYLIGHTITALIC.OTF in Resources */,
+				47E943FEF2FB4D11A5F4B51D /* SFPRODISPLAYMEDIUM.OTF in Resources */,
+				6CD14BF55B0C408E9BCEACB1 /* SFPRODISPLAYREGULAR.OTF in Resources */,
+				E113A010DABD453D9BAA71E6 /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */,
+				D1429E78172E40788ABD12AE /* SFPRODISPLAYTHINITALIC.OTF in Resources */,
+				2234470D24DA431C8F1B2476 /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +355,7 @@
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-                                MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -334,7 +379,7 @@
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-                                MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
