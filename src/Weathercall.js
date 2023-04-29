@@ -11,6 +11,8 @@ import {
 import axios from "axios";
 import GetLocation from "react-native-get-location";
 import RNAndroidLocationEnabler from "react-native-android-location-enabler";
+import { BlurView } from "@react-native-community/blur";
+import LinearGradient from "react-native-linear-gradient";
 
 export default function Weathercall() {
   // const [apiData, setApiData] = useState();
@@ -107,69 +109,98 @@ export default function Weathercall() {
 
   return (
     <View style={styles.conatiner}>
+    <View style={styles.con}>
       {/* {console.log("State Location: ", loc)}
       {loading ? (
         <ActivityIndicator size="large" color="#00ff00" />
       ) : ( */}
       <>
-        <Text style={styles.text1}>{apiData?.name}</Text>
-        <Text style={styles.text}>
-        {tempchangertoC(apiData?.main.temp)}°
-        </Text>
-        <Text style={styles.text_grey}>
-        {apiData?.weather[0].main}
-        </Text>
-        <View style={{flexDirection: 'row', justifyContent: 'center',}}>
-        <Text style={styles.text2}>
-        H:{tempchangertoC(apiData?.main.temp_max)}°
-        </Text><Text style={styles.text2}>
-        L:{tempchangertoC(apiData?.main.temp_min)}°
-        </Text>
-        </View>
+        <BlurView
+          style={styles.absolute}
+          blurType="light"
+          blurAmount={20}
+          reducedTransparencyFallbackColor="white"
+        >
+          <LinearGradient
+            useAngle
+            angle={100}
+            colors={["rgba(46,51,90,0.50)", "rgba(51,48,102,0.20)"]}
+            style={styles.linearGradient}
+          >
+            <Text style={styles.text1}>{apiData?.name}</Text>
+            <Text style={styles.text}>
+              {tempchangertoC(apiData?.main.temp)}°
+            </Text>
+            <Text style={styles.text_grey}>{apiData?.weather[0].main}</Text>
+            <View style={{ flexDirection: "row", justifyContent: "center" }}>
+              <Text style={styles.text2}>
+                H:{tempchangertoC(apiData?.main.temp_max)}°
+              </Text>
+              <Text style={styles.text2}>
+                L:{tempchangertoC(apiData?.main.temp_min)}°
+              </Text>
+            </View>
+          </LinearGradient>
+        </BlurView>
       </>
-      <View style={styles.bottomView}>
-      <Image source={require('../assets/imgs/House.png')}/>
-      </View>
       {/* )} */}
     </View>
+    <View style={styles.bottomView}>
+        <Image
+          source={require("../assets/imgs/House.png")}
+        />
+        <BlurView
+          style={styles.blur}
+          blurType="light"
+          blurAmount={20}
+          reducedTransparencyFallbackColor="white"
+        />
+      </View>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
   conatiner: {
     marginTop: 100,
-    paddingTop: (Platform.OS === 'ios') ? 20 : 0,
+    flexGrow: 1,
+    alignItems: "center",
+  },
+  con: {
+    width: "75%"
+  },
+  linearGradient: {
     flex: 1,
+    paddingLeft: 15,
+    borderRadius: 20,
   },
   bottomView: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    height: "70%",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
   text1: {
+    paddingTop: 10,
     color: "#fff",
     textAlign: "center",
     fontSize: 30,
     lineHeight: 40,
- },
+  },
   text: {
     color: "#fff",
+    justifyContent: "center",
     textAlign: "center",
     fontSize: 90,
     lineHeight: 100,
     fontWeight: 600,
-
   },
   text2: {
     color: "#fff",
-    textAlign: "center",
     fontSize: 20,
     marginHorizontal: 5,
     fontWeight: 600,
-
   },
   text_grey: {
     color: "#EBEBF599",
@@ -177,5 +208,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 600,
     lineHeight: 25,
+  },
+  absolute: {
+    width: "100%",
+    height: 220,
+    borderColor: "#fff",
+    borderRadius: 200,
+    borderWidth: 2,
+    overlayColor: "transparent",
+  },
+  blur: {
+    width: "100%",
+    height: 60,
+    overlayColor: "transparent",
   },
 });
