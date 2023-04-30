@@ -14,7 +14,6 @@ import RNAndroidLocationEnabler from "react-native-android-location-enabler";
 import { BlurView } from "@react-native-community/blur";
 import LinearGradient from "react-native-linear-gradient";
 import Locgif from './Locgif.json';
-import Loc from './loc.json';
 import Lottie from "lottie-react-native";
 
 
