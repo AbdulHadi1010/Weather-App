@@ -79,7 +79,7 @@ export default function Weathercall() {
         .then((location) => {
           // setloc(location)
           callApi(location);
-          console.log("Initial location: ", location);
+          // console.log("Initial location: ", location);
           // console.log("State location: ", loc);
         })
         .catch((error) => {
@@ -100,7 +100,7 @@ export default function Weathercall() {
       .then((response) => {
         setApiData(response.data);
         setLoading(false);
-        console.log(JSON.stringify(response.data));
+        // console.log(JSON.stringify(response.data));
       })
       .catch((error) => {
         console.log(error);
