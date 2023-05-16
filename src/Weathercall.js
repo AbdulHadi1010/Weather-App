@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import {
   ActivityIndicator,
   StyleSheet,
@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
   Image,
+  Dimensions,
 } from "react-native";
 import axios from "axios";
 import GetLocation from "react-native-get-location";
@@ -18,6 +19,8 @@ import Lottie from "lottie-react-native";
 
 
 export default function Weathercall() {
+
+
   const [apiData, setApiData] = useState();
   const [loading, setLoading] = useState(true);
   // const apiData = {
@@ -171,12 +174,13 @@ export default function Weathercall() {
           blurAmount={20}
           reducedTransparencyFallbackColor="white"
         />
-      </View>
+        </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  
   conatiner: {
     marginTop: 100,
     flex: 1,

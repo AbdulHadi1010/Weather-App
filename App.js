@@ -2,6 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import Weathercall from "./src/Weathercall";
+import "react-native-gesture-handler";
+
+
 
 
 export default function App() {
@@ -9,9 +12,11 @@ export default function App() {
     <View style={styles.container}>
     <ImageBackground source={require("./assets/imgs/BgImg.png")} style={styles.pic}>  
       <Weathercall />
+      
+     
       <StatusBar style="auto" />
       </ImageBackground>
-    </View>
+      </View>
   );
 }
 
