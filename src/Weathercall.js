@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   StyleSheet,
@@ -9,20 +9,13 @@ import {
   Image,
   Dimensions,
 } from "react-native";
-import axios from "axios";
-import GetLocation from "react-native-get-location";
-import RNAndroidLocationEnabler from "react-native-android-location-enabler";
+
 import { BlurView } from "@react-native-community/blur";
 import LinearGradient from "react-native-linear-gradient";
-import Locgif from './Locgif.json';
+import Locgif from "./Locgif.json";
 import Lottie from "lottie-react-native";
 
-
-export default function Weathercall() {
-
-
-  const [apiData, setApiData] = useState();
-  const [loading, setLoading] = useState(true);
+export default function Weathercall({ data }) {
   // const apiData = {
   //   coord: { lon: 74.2865, lat: 31.5081 },
   //   weather: [{ id: 721, main: "Haze", description: "haze", icon: "50n" }],
@@ -52,156 +45,111 @@ export default function Weathercall() {
   //   cod: 200,
   // };
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (data) {
+        setLoading(false);
+      } // Set loading to false after a delay
+    }, 2000);
+  }, [data]);
+
   const tempchangertoC = (num) => {
     return Math.round(num - 273.15);
   };
-  const UpdateLocation = () => {
-    RNAndroidLocationEnabler.promptForEnableLocationIfNeeded({
-      interval: 10000,
-      fastInterval: 5000,
-    })
-      .then((data) => {
-        Locationfetch();
-      })
-      .catch((err) => {
-        // The user has not accepted to enable the location services or something went wrong during the process
-        // "err" : { "code" : "ERR00|ERR01|ERR02|ERR03", "message" : "message"}
-        // codes :
-        //  - ERR00 : The user has clicked on Cancel button in the popup
-        //  - ERR01 : If the Settings change are unavailable
-        //  - ERR02 : If the popup has failed to open
-        //  - ERR03 : Internal error
-      });
-
-    const Locationfetch = () => {
-      GetLocation.getCurrentPosition({
-        enableHighAccuracy: true,
-        timeout: 60000,
-      })
-        .then((location) => {
-          // setloc(location)
-          callApi(location);
-          // console.log("Initial location: ", location);
-          // console.log("State location: ", loc);
-        })
-        .catch((error) => {
-          const { code, message } = error;
-          console.warn(code, message);
-        });
-    };
-  };
-  const callApi = (location) => {
-    let config = {
-      method: "get",
-      maxBodyLength: Infinity,
-      url: `https://api.openweathermap.org/data/2.5/weather?lat=${location?.latitude}&lon=${location?.longitude}&appid=134bcc17ff7fbd17a3ec89f642825260`,
-      headers: {},
-    };
-    axios
-      .request(config)
-      .then((response) => {
-        setApiData(response.data);
-        setLoading(false);
-        // console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    UpdateLocation()
-  }, []);
-  {
-    /* <ActivityIndicator size="large" color="#00ff00" /> */
-  }
   return (
     <View style={styles.conatiner}>
-      <View style={styles.con}>
-        <BlurView
-          style={styles.absolute}
-          blurType="light"
-          blurAmount={20}
-          reducedTransparencyFallbackColor="white"
-        >
-          <LinearGradient
-            useAngle
-            angle={100}
-            colors={["rgba(46,51,90,0.50)", "rgba(51,48,102,0.20)"]}
-            style={styles.linearGradient}
+      <ImageBackground
+        source={require("../assets/imgs/BgImg.png")}
+        style={styles.picture}
+      >
+        <View style={styles.con}>
+          <BlurView
+            style={styles.absolute}
+            blurType="light"
+            blurAmount={20}
+            reducedTransparencyFallbackColor="white"
           >
-
-        
-        {loading ? (
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
-          <Lottie  
-          style={{width: 200, height: 200, }} 
-          source={Locgif}
-          autoPlay 
-          loop 
-          />
+            <LinearGradient
+              useAngle
+              angle={100}
+              colors={["rgba(46,51,90,0.50)", "rgba(51,48,102,0.20)"]}
+              style={styles.linearGradient}
+            >
+              {loading ? (
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Lottie
+                    style={{ width: 200, height: 200 }}
+                    source={Locgif}
+                    autoPlay
+                    loop
+                  />
+                </View>
+              ) : (
+                <>
+                  <Text style={styles.text1}>{data?.name}</Text>
+                  <Text style={styles.text}>
+                    {tempchangertoC(data?.main.temp)}°
+                  </Text>
+                  <Text style={styles.text_grey}>{data?.weather[0].main}</Text>
+                  <View
+                    style={{ flexDirection: "row", justifyContent: "center" }}
+                  >
+                    <Text style={styles.text2}>
+                      H:{tempchangertoC(data?.main.temp_max)}°
+                    </Text>
+                    <Text style={styles.text2}>
+                      L:{tempchangertoC(data?.main.temp_min)}°
+                    </Text>
+                  </View>
+                </>
+              )}
+            </LinearGradient>
+          </BlurView>
         </View>
-      ) : (
-        <>
-        <Text style={styles.text1}>{apiData?.name}</Text>
-            <Text style={styles.text}>
-              {tempchangertoC(apiData?.main.temp)}°
-            </Text>
-            <Text style={styles.text_grey}>{apiData?.weather[0].main}</Text>
-            <View style={{ flexDirection: "row", justifyContent: "center" }}>
-              <Text style={styles.text2}>
-                H:{tempchangertoC(apiData?.main.temp_max)}°
-              </Text>
-              <Text style={styles.text2}>
-                L:{tempchangertoC(apiData?.main.temp_min)}°
-              </Text>
-            </View>
-          
-      </>
-)}
-        </LinearGradient>
-    </BlurView>   
-       </View> 
-       <View style={styles.bottomView}>
-        <Image
-          source={require("../assets/imgs/House.png")}
-        />
-        <BlurView
+        <View style={styles.bottomView}>
+          <Image source={require("../assets/imgs/House.png")} />
+          {/* <BlurView
           style={styles.blur}
           blurType="light"
           blurAmount={20}
           reducedTransparencyFallbackColor="white"
-        />
+        /> */}
         </View>
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  
-  conatiner: {
-    marginTop: 100,
+  picture: {
     flex: 1,
-    alignItems: "center",
-    // justifyContent: 'center',
-    // width: "80%",
+  },
+  conatiner: {
+    flex: 1,
+    justifyContent: "center",
   },
   con: {
     width: "75%",
-    // flex: 1,
+    alignSelf: "center",
+    marginTop: 100,
   },
   linearGradient: {
     flex: 1,
-    // paddingLeft: 15,
     borderRadius: 20,
   },
   bottomView: {
-    position: "absolute",
+    // position: "absolute",
     bottom: 0,
+    top: "7%",
     justifyContent: "center",
-    alignItems: "center",
     width: "100%",
   },
   text1: {

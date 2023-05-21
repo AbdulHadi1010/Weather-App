@@ -1,30 +1,15 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import Weathercall from "./src/Weathercall";
-import "react-native-gesture-handler";
-
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from "./src/Tabs";
+import { StatusBar } from "expo-status-bar";
 
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-    <ImageBackground source={require("./assets/imgs/BgImg.png")} style={styles.pic}>  
-      <Weathercall />
-      
-     
-      <StatusBar style="auto" />
-      </ImageBackground>
-      </View>
+    <NavigationContainer>
+    <Tabs/>
+    <StatusBar style="auto" />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  pic: {
-    flex: 1,
-  },
-});
